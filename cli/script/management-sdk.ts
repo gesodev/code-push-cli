@@ -58,7 +58,7 @@ class AccountManager {
     OWNER: "Owner",
     COLLABORATOR: "Collaborator",
   };
-  public static SERVER_URL = "http://1.53.252.173:5931/";
+  public static SERVER_URL = "http://1.53.252.173:5931";
 
   private static API_VERSION: number = 2;
 

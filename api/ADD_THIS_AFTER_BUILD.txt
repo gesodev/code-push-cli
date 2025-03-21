@@ -1,0 +1,7 @@
+path: bin\script\storage\azure-storage.js
+function: setup
+code:
+	//change port to 1000
+        blobServiceClient.url = blobServiceClient.url.replaceAll("10000", "1000");
+        blobServiceClient.storageClientContext.url = blobServiceClient.url.replaceAll("10000", "1000");
+        blobServiceClient.serviceContext.url = blobServiceClient.url.replaceAll("10000", "1000");

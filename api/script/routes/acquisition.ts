@@ -180,6 +180,13 @@ export function getAcquisitionRouter(config: AcquisitionConfig): express.Router 
             updateInfo: giveRolloutPackage ? cachedResponseObject.rolloutPackage : cachedResponseObject.originalPackage,
           };
 
+          //Change download url to 1.53.252.173:1000
+          if(updateCheckBody.updateInfo.downloadURL.includes("127.0.0.1:1000")) {
+            updateCheckBody.updateInfo.downloadURL = updateCheckBody.updateInfo.downloadURL.replaceAll("127.0.0.1:1000", "1.53.252.173:1000");
+          } else {
+            updateCheckBody.updateInfo.downloadURL = updateCheckBody.updateInfo.downloadURL.replaceAll("127.0.0.1:10000", "1.53.252.173:1000");
+		      }
+
           // Change in new API
           updateCheckBody.updateInfo.target_binary_range = updateCheckBody.updateInfo.appVersion;
 

@@ -51,6 +51,24 @@ To make it visible to others github's accounts, you need to add these accounts c
 3. Check if the collaborator was added by running `code-push-standalone collaborator ls <appName>`
 
 For example: `code-push-standalone collaborator add NTF-IOS gesodev@gmail.com`
+
+#### App configuration
+##### Android
+Path: `<projectSource> > android > app > src > main > res > values > string.xml`\
+Add these lines to file:
+```shell
+<string moduleConfig="true" name="CodePushServerUrl">http://1.53.252.173:5931</string>
+<string moduleConfig="true" name="CodePushDeploymentKey"><appKey></string>
+```
+##### IOS
+Path: `<projectSource> > ios > <appPackageName> > Info.plist`\
+Add these lines to file:
+```shell
+<key>CodePushServerURL</key>
+<string>http://1.53.252.173:5931</string>
+<key>CodePushDeploymentKey</key>
+<string><appKey></string>
+```
 ## Deploy an app
 Just run this command
 ```shell
